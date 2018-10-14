@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Base Screen-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="BaseScreen" customModule="ObserverAndNotification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star_Wars_logo" translatesAutoresizingMaskIntoConstraints="NO" id="O1p-PH-sUf">
+                                <rect key="frame" x="0.0" y="20" width="375" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="JJg-oO-kx5"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yQW-eL-bfq">
+                                <rect key="frame" x="0.0" y="336" width="375" height="0.0"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLM-ix-8Ds" customClass="RoundableButton">
+                                <rect key="frame" x="80" y="520" width="215" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Choose a side">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="circular" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="chooseButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mt0-wd-YDx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="GLM-ix-8Ds" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="8FJ-iC-GtE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O1p-PH-sUf" secondAttribute="trailing" id="9bC-go-iwe"/>
+                            <constraint firstItem="yQW-eL-bfq" firstAttribute="top" secondItem="O1p-PH-sUf" secondAttribute="bottom" constant="66" id="FJq-5T-1FL"/>
+                            <constraint firstItem="yQW-eL-bfq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="MFS-bj-eFP"/>
+                            <constraint firstItem="O1p-PH-sUf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Mla-SV-qDE"/>
+                            <constraint firstItem="O1p-PH-sUf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="d19-T3-TwU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yQW-eL-bfq" secondAttribute="trailing" id="gRF-dt-KNQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GLM-ix-8Ds" secondAttribute="trailing" constant="80" id="rNR-UA-j6i"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GLM-ix-8Ds" secondAttribute="bottom" constant="117" id="sS9-AH-z0M"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="ChooseButton" destination="GLM-ix-8Ds" id="bWV-hr-VmO"/>
+                        <outlet property="mainImageView" destination="O1p-PH-sUf" id="NKr-6T-ID5"/>
+                        <outlet property="nameLabel" destination="yQW-eL-bfq" id="cAb-ef-wIM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="31.934032983508249"/>
+        </scene>
+        <!--Selection Screen-->
+        <scene sceneID="yfT-CY-7yo">
+            <objects>
+                <viewController storyboardIdentifier="SelectionScreen" id="gT7-Uc-g9Q" customClass="SelectionScreen" customModule="ObserverAndNotification" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kgr-7R-IFi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AIM-uC-XJm">
+                                <rect key="frame" x="81" y="132" width="217" height="217"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="217" id="PAC-CX-dKq"/>
+                                </constraints>
+                                <state key="normal" image="rebel"/>
+                                <connections>
+                                    <action selector="rebelButton:" destination="gT7-Uc-g9Q" eventType="touchUpInside" id="9Zk-tk-WTc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Side" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S9B-L1-tzE">
+                                <rect key="frame" x="92" y="14" width="191" height="32"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="mo9-1a-Bx0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <color key="textColor" red="0.94901960784313721" green="0.90588235294117647" blue="0.28235294117647058" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9aK-Od-Zkq">
+                                <rect key="frame" x="68" y="398" width="263" height="205"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="263" id="2TF-Cr-CFq"/>
+                                    <constraint firstAttribute="height" constant="205" id="ryr-ym-dDO"/>
+                                </constraints>
+                                <state key="normal" image="jedi"/>
+                                <connections>
+                                    <action selector="jediButton:" destination="gT7-Uc-g9Q" eventType="touchUpInside" id="wOH-CT-Fsf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="S9B-L1-tzE" firstAttribute="leading" secondItem="qT8-uU-0Wo" secondAttribute="leading" constant="92" id="6Pl-vv-k2B"/>
+                            <constraint firstItem="S9B-L1-tzE" firstAttribute="top" secondItem="kgr-7R-IFi" secondAttribute="top" constant="14" id="86k-mE-hOd"/>
+                            <constraint firstItem="AIM-uC-XJm" firstAttribute="leading" secondItem="qT8-uU-0Wo" secondAttribute="leading" constant="81" id="FaC-yH-6iA"/>
+                            <constraint firstItem="qT8-uU-0Wo" firstAttribute="trailing" secondItem="S9B-L1-tzE" secondAttribute="trailing" constant="92" id="ML5-mQ-oKB"/>
+                            <constraint firstItem="AIM-uC-XJm" firstAttribute="top" secondItem="S9B-L1-tzE" secondAttribute="bottom" constant="86" id="ZSB-1K-WD8"/>
+                            <constraint firstItem="qT8-uU-0Wo" firstAttribute="trailing" secondItem="AIM-uC-XJm" secondAttribute="trailing" constant="77" id="dHG-e3-S7S"/>
+                            <constraint firstItem="9aK-Od-Zkq" firstAttribute="top" secondItem="AIM-uC-XJm" secondAttribute="bottom" constant="49" id="fk7-Ib-nPc"/>
+                            <constraint firstItem="9aK-Od-Zkq" firstAttribute="leading" secondItem="qT8-uU-0Wo" secondAttribute="leading" constant="68" id="wGl-Vv-Qs3"/>
+                            <constraint firstItem="qT8-uU-0Wo" firstAttribute="trailing" secondItem="9aK-Od-Zkq" secondAttribute="trailing" constant="44" id="zcP-DL-gOf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qT8-uU-0Wo"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pvl-3f-SdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="765.60000000000002" y="31.934032983508249"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Star_Wars_logo" width="1837" height="789"/>
+        <image name="jedi" width="340" height="270"/>
+        <image name="rebel" width="300" height="300"/>
+    </resources>
+</document>
